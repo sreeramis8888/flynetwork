@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flynetwork/src/data/constants/color_constants.dart';
 import 'package:flynetwork/src/data/constants/style_constant.dart';
+import 'package:flynetwork/src/data/models/user_model.dart';
+import 'package:flynetwork/src/data/services/navigation_service.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
   const ProfilePage({
@@ -14,6 +16,7 @@ class ProfilePage extends ConsumerStatefulWidget {
 }
 
 class _ProfilePageState extends ConsumerState<ProfilePage> {
+  NavigationService navigationService = NavigationService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -295,6 +298,159 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
                       width: 20,
                     ),
                     GestureDetector(
+                      onTap: () {
+                        // Create State Model
+final stateModel = StateModel(
+  id: 'state123',
+  name: 'California'
+);
+
+// Create Zone Model
+final zoneModel = ZoneModel(
+  id: 'zone123',
+  name: 'Northern California Zone',
+  state: stateModel
+);
+
+// Create District Model
+final districtModel = DistrictModel(
+  id: 'dist123',
+  name: 'Bay Area District',
+  zone: zoneModel
+);
+
+// Create Chapter Model
+final chapterModel = ChapterModel(
+  id: 'chap123',
+  name: 'Silicon Valley Chapter',
+  district: districtModel
+);
+
+// Create Secondary Phone
+final secondaryPhone = SecondaryPhone(
+  whatsapp: '+1987654321',
+  business: '+1122334455'
+);
+
+// Create Companies
+final companies = [
+  Company(
+    name: 'Tech Solutions Inc',
+    designation: 'CEO',
+    email: 'john@techsolutions.com',
+    websites: 'www.techsolutions.com',
+    phone: '+1234567890'
+  ),
+  Company(
+    name: 'Innovation Labs',
+    designation: 'Board Member',
+    email: 'john@innovationlabs.com',
+    websites: 'www.innovationlabs.com',
+    phone: '+1987654321'
+  )
+];
+
+// Create Social Links
+final socialLinks = [
+  Link(
+    name: 'LinkedIn',
+    link: 'https://linkedin.com/johndoe'
+  ),
+  Link(
+    name: 'Twitter',
+    link: 'https://twitter.com/johndoe'
+  )
+];
+
+// Create Website Links
+final websiteLinks = [
+  Link(
+    name: 'Personal Website',
+    link: 'https://johndoe.com'
+  ),
+  Link(
+    name: 'Portfolio',
+    link: 'https://portfolio.johndoe.com'
+  )
+];
+
+// Create Awards
+final awards = [
+  Award(
+    image: 'https://placehold.co/600x400',
+    name: 'Innovator of the Year',
+    authority: 'Tech Association'
+  ),
+  Award(
+    image: 'https://placehold.co/600x400',
+    name: 'Business Excellence',
+    authority: 'Chamber of Commerce'
+  )
+];
+
+// Create Video Links
+final videoLinks = [
+  Link(
+    name: 'Company Presentation',
+    link: 'https://youtube.com/presentation'
+  ),
+  Link(
+    name: 'Conference Talk',
+    link: 'https://youtube.com/conference'
+  )
+];
+
+// Create Certificate Links
+final certificateLinks = [
+  Link(
+    name: 'AWS Certification',
+    link: 'https://placehold.co/600x400'
+  ),
+  Link(
+    name: 'Project Management',
+    link: 'https://placehold.co/600x400'
+  )
+];
+
+// Create Main User Model
+final userModel = UserModel(
+  name: 'John Doe',
+  uid: 'user123',
+  memberId: 'MEM001',
+  bloodgroup: 'O+',
+  isAdmin: true,
+  chapter: chapterModel,
+  image: 'https://placehold.co/600x400',
+  email: 'john.doe@example.com',
+  phone: '+1234567890',
+  secondaryPhone: secondaryPhone,
+  bio: 'Experienced entrepreneur with 15 years in tech industry',
+  status: 'active',
+  address: '123 Tech Street, San Francisco, CA 94105',
+  company: companies,
+  businessCategory: 'Technology',
+  businessSubCategory: 'Software Development',
+  file: ['document1.pdf', 'document2.pdf'],
+  social: socialLinks,
+  websites: websiteLinks,
+  awards: awards,
+  videos: videoLinks,
+  certificates: certificateLinks,
+
+  blockedUsers: [],
+  feedCount: 42,
+  productCount: 15,
+  subscription: 'premium',
+  fcm: 'fcm_token_123',
+  createdAt: DateTime.now(),
+  level: 'gold',
+  levelId: '67933d8d8b6757ccfffe661d',
+  levelName: 'Kerala',
+  adminType: 'State Admin'
+);
+                        navigationService.pushNamed('ProfilePreview',
+                            arguments: userModel);
+                      },
                       child: Container(
                         height: 70,
                         width: 70,

@@ -8,7 +8,7 @@
 PRODUCT_NAME = flynetwork
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.skybertech.flynetwork.flynetwork
+PRODUCT_BUNDLE_IDENTIFIER = com.skybertech.flynetwork
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2025 com.skybertech.flynetwork. All rights reserved.

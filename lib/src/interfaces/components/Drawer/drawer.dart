@@ -70,9 +70,9 @@ Widget customDrawer() {
 
           _buildDrawerItem(
             icon: 'assets/svg/icons/activity.svg',
-            label: 'Analytics',
+            label: 'My Activities',
             onTap: () {
-              navigationService.pushNamed('AnalyticsPage');
+              navigationService.pushNamed('ActivityPage');
             },
           ),
 

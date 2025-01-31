@@ -14,6 +14,7 @@ import 'package:flynetwork/src/data/services/snackbar_service.dart';
 import 'package:flynetwork/src/interfaces/components/Custom%20Widgets/event_widget.dart';
 import 'package:flynetwork/src/interfaces/components/Custom%20Widgets/home_containers.dart';
 import 'package:flynetwork/src/interfaces/components/Cards/news_card.dart';
+
 import 'package:flynetwork/src/interfaces/components/Drawer/drawer.dart';
 import 'package:flynetwork/src/interfaces/components/VideoPlayer/custom_video.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';

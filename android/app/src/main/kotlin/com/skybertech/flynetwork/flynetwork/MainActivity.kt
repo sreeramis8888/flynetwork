@@ -1,4 +1,4 @@
-package com.skybertech.flynetwork.flynetwork
+package com.skybertech.flynetwork
 
 import io.flutter.embedding.android.FlutterActivity
 
